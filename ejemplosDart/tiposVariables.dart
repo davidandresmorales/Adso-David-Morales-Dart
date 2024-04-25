@@ -10,6 +10,7 @@ void main() {
   String nombre; //Vble tipo cadena
   int edad; //Vble tipo entero
   double altura; //Vble tipo real
+  // ignore: unused_local_variable
   bool estado; //Vble tipo booleano
   nombre = "Ana";
   edad = 18;
