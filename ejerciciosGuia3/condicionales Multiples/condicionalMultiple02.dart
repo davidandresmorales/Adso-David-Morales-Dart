@@ -14,8 +14,9 @@ void main(List<String> args) {
   que  lea  el  nombre  del  granjero,  el  tipo  de  fumigación  solicitada  (1-4)  y  el  número  
   de hectáreas a fumigar. Se debe imprimir el nombre del granjero y la cuenta total.*/
   //DEFINICION VARIABLES
-  double nombre, numHectareas, tipoFumigacion, cuentaTotal;
+  double nombre, numHectareas, tipoFumigacion;
   double Tipo1, Tipo2, Tipo3, Tipo4;
+  double cuentaTotal = 0;
   //ENTRADA ALGORITMO
   print("Ingrese el nombre del granjero");
   nombre = double.parse(stdin.readLineSync()!);
