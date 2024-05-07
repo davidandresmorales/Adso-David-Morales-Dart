@@ -2,29 +2,31 @@ import 'dart:io';
 
 void main() {
   //David Andres Morales -  CONDICIONAL ANIDADO 07
-  /*Leer 2 números; si son iguales que los multiplique, si el primero
-  es mayor que el segundo que los reste y si no que los sume.*/
-  // DEFINICIÓN DE VARIABLES
-  double numero1, numero2, resultado;
+  /*Leer 2 números; si son iguales que los multiplique, 
+  si el primero es mayor que el segundo que los reste y
+  si no que los sume.*/
+  // Definición Variables
+  int num1, num2, resultado;
 
-  // ENTRADA DEL ALGORITMO
-  stdout.write("Ingrese el primer número: ");
-  numero1 = double.parse(stdin.readLineSync()!);
+  // Entrada Algoritmo
+  print("Ingrese el primer número:");
+  num1 = int.parse(stdin.readLineSync()!);
+  
+  print("Ingrese el segundo número:");
+  num2 = int.parse(stdin.readLineSync()!);
 
-  stdout.write("Ingrese el segundo número: ");
-  numero2 = double.parse(stdin.readLineSync()!);
-
-  // PROCESO-SALIDA ALGORITMO
-  if (numero1 == numero2) {
-    resultado = numero1 * numero2;
-    print("Los números son iguales. Su multiplicación es: $resultado");
+  // Proceso Algoritmo
+  if (num1 == num2) {
+    // Si son iguales que los multiplique
+    resultado = num1 * num2;
+  } else if (num1 > num2) {
+    // Si el primero es mayor que el segundo que los reste
+    resultado = num1 - num2;
   } else {
-    if (numero1 > numero2) {
-      resultado = numero1 - numero2;
-      print("El primer número es mayor que el segundo. La resta es: $resultado");
-    } else {
-      resultado = numero1 + numero2;
-      print("El primer número es menor que el segundo. La suma es: $resultado");
-    }
+    // Si no que los sume
+    resultado = num1 + num2;
   }
+
+  // Salida Algoritmo
+  print("El resultado es: $resultado");
 }

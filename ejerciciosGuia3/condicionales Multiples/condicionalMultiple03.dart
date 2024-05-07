@@ -14,17 +14,17 @@ void main() {
   double valor;
   int operacion;
 
-  // ENTRADA DE DATOS
+  // ENTRADA AlGORITMO
   print("Ingrese un número (Valor):");
   valor = double.parse(stdin.readLineSync()!);
   
   print("Ingrese otro número (Operación):");
   operacion = int.parse(stdin.readLineSync()!);
 
-  // PROCESAMIENTO
+  // PROCESO ALGORITMO
   double resultado = calcularResultado(valor, operacion);
 
-  // SALIDA
+  // SALIDA ALGORITMO
   print("El resultado de la operación es: $resultado");
 }
 

@@ -13,5 +13,5 @@ void main() {
   promedio = (nota1 + nota2 + nota3) / 3;
   //SALIDA ALGORITMO
   stdout.write("las notas fueron: $nota1, $nota2, y $nota3");
-  stdout.writeln("y el promedio es: $promedio");
+  stdout.writeln (" y el promedio es: $promedio");
 }

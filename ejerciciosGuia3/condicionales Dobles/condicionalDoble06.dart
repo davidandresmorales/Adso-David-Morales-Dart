@@ -2,7 +2,10 @@ import 'dart:io';
 
 void main() {
   //David Andres Morales - EJE CONDICIONAL DOBLE 06
-
+  /*El gobierno colombiano desea reforestar un bosque que
+  mide determinado número de hectáreas. Si la superficie del
+  terreno excede a 1 millón de metros cuadrados, entonces decidirá
+  sembrar de la sig. manera:*/
   // DEFINICION VARIABLES
   double hectareas, metrosCuadrados, porcentajePinos, porcentajeRobles, porcentajeCedros;
   int numPinos, numRobles, numCedros;

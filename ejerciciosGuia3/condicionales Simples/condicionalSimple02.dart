@@ -28,8 +28,7 @@ void main() {
   // Proceso Algoritmo
   area = largo * ancho;
   if (area > 400) {
-    // Si el terreno tiene más de 400 metros cuadrados
-    precioTotal = area * precioPorMetroCuadrado * 0.9; // Aplicar descuento del 10%
+    precioTotal = area * precioPorMetroCuadrado * 0.9; 
   } else {
     precioTotal = area * precioPorMetroCuadrado;
   }

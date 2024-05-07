@@ -1,87 +1,29 @@
 import 'dart:io';
 
-
-
-
 void main() {
+  //David Andres Morales - EJE CONDICIONAL SIMPLE 03
+  /*El jefe deunalmacén de ropa, pone una promoción en sus trajes por un período 
+  de tres días para sus clientes, de tal manera que si un cliente ordena un traje 
+  se captura el modelo del traje y el precio unitario. Si el cliente ordena tres o 
+  más trajes se le hace un descuento del 17%, si no se le cobra al precio normal. */
+  // Definición Variables
+  String modeloTraje;
+  double precioUnitario;
+  double precioTotal;
 
-  // David Andres Morales - EJE CONDICIONAL SIMPLE 03
-
-  /*
-
-  El jefe de un almacén de ropa, pone una promoción en sus trajes por un período de tres días para sus clientes,
-
-  de tal manera que si un cliente ordena un traje se captura el modelo del traje y el precio unitario.
-
-  Si el cliente ordena tres o más trajes se le hace un descuento del 17%, si no se le cobra al precio normal.
-
-  */
-
-
-
-
-  // DEFINICION variables
-
-  Map<String, double> trajes = {};
-
+  // Entrada Algoritmo
+  print("Ingrese el modelo del traje:");
+  modeloTraje = stdin.readLineSync()!;
   
+  print("Ingrese el precio unitario del traje:");
+  precioUnitario = double.parse(stdin.readLineSync()!);
 
-  //ENTRADA Algoritmos
-
-  while (true) {
-
-    stdout.write("Ingrese el modelo del traje (o escriba 'fin' para terminar): ");
-
-    String modelo = stdin.readLineSync()!;
-
-    if (modelo.toLowerCase() == 'fin') {
-
-      break;
-
-    }
-
-    stdout.write("Ingrese el precio del traje: ");
-
-    double precio = double.parse(stdin.readLineSync()!);
-
-    trajes[modelo] = precio;
-
+  // Proceso Algoritmo
+  if (precioUnitario * 3 >= 3) {
+    precioTotal = precioUnitario * 3 * 0.83; 
+  } else {
+    precioTotal = precioUnitario * 3;
   }
-
-//PROCESO Algoritmos  
-
-  double precioTotal = calcularPrecioTotal(trajes);
-
-  double precioFinal = aplicarDescuento(precioTotal);
-
-  print("Total a pagar: $precioFinal");
-
-}
-
-double calcularPrecioTotal(Map<String, double> trajes) {
-
-  double precioTotal = 0;
-
-  trajes.forEach((modelo, precio) {
-
-    precioTotal += precio;
-
-  });
-
-  return precioTotal;
-
-}
-
-double aplicarDescuento(double precioTotal) {
-
-  if (precioTotal >= 3) {
-
-    double descuento = precioTotal * 0.17;
-
-    precioTotal -= descuento;
-
-  }
-
-  return precioTotal;
-
+  // Salida Algoritmo
+  print("El precio total a pagar por $modeloTraje es: \$${precioTotal.toStringAsFixed(2)}");
 }
