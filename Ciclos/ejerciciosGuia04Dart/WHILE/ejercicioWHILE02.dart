@@ -1,35 +1,35 @@
 import 'dart:io';
 
 void main() {
-  // Solicitar el número de obreros
-  stdout.write("Ingrese el número de obreros: ");
-  var numObreros = int.parse(stdin.readLineSync()!);
+// David Andres Morales - EJE WHILE 02
+  /*En una empresa se requiere calcular el salario semanal de cada uno de los n obreros que laboran en ella. El salario se obtiene de la sig. forma:
+Si el obrero trabaja 40 horas o menos se le paga $20 por hora
+Si trabaja más de 40 horas se le paga $20 por cada una de las primeras 40 horas y $25 por cada hora extra.
+  */
 
-  // Inicializar la variable para contar los obreros
-  var contadorObreros = 1;
+  //Definicion variables
+  int horasTrabajadas = 0, horasExtras = 0, cantObreros, contador = 0;
+  double salario, valorHora = 20, valorHoraExtras = 25;
 
-  // Calcular el salario de cada obrero
-  while (contadorObreros <= numObreros) {
-    stdout.write("\nHoras trabajadas por el obrero $contadorObreros: ");
+//Entrada Algoritmo
+  print("Escriba la cantidad de obreros");
+  cantObreros = int.parse(stdin.readLineSync()!);
 
-    // Leer las horas trabajadas por el obrero
-    var horasTrabajadas = int.parse(stdin.readLineSync()!);
+//Proceso Algoritmo
+  while (contador < cantObreros) {
+    print("Escriba la cantidad de horas que trabajo");
+    horasTrabajadas = int.parse(stdin.readLineSync()!);
+    contador++;
 
-    // Calcular el salario para el obrero
-    var salario;
-
-    if (horasTrabajadas <= 40) {
-      salario = horasTrabajadas * 20;
+    if (horasTrabajadas > 40) {
+      horasExtras = horasTrabajadas - 40;
+      salario = (40 * valorHora) + (horasExtras * valorHoraExtras);
     } else {
-      var horasNormales = 40;
-      var horasExtras = horasTrabajadas - 40;
-      salario = (horasNormales * 20) + (horasExtras * 25);
+      salario = horasTrabajadas * valorHora;
     }
-
-    // Mostrar el salario del obrero
-    print("El salario del obrero $contadorObreros es: \$$salario");
-
-    // Incrementar el contador de obreros
-    contadorObreros++;
+    //Salida Algoritmo
+    print("Las horas trabajadas son: $horasTrabajadas");
+    print("las horas extras trabajadas son: $horasExtras");
+    print("el salario es: $salario");
   }
 }
