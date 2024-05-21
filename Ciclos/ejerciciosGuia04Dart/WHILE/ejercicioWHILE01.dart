@@ -1,31 +1,24 @@
 import 'dart:io';
 
 void main(List<String> args) {
-// SAMUEL CASTAÑO CARDONA - EJE WHILE 01
-  //
-  /*
-    Una compañía de seguros tiene contratados a n vendedores. Cada uno hace tres ventas a la semana. Su política de pagos es que un vendedor recibe un sueldo base, y un 10% extra por comisiones de sus  ventas.  El  gerente  de  su  compañía  desea  saber  cuanto  dineroobtendrá  en  la  semana  cada vendedor por concepto de comisiones por las tres ventas realizadas, y cuanto tomando en cuenta su sueldo base y sus comisiones
-    */
 
-  //Definicion de variables
+  // David Andres Morales - FOR 01
+  /* Calcular el promedio de un alumno que tiene 7 calificaciones en la materia de Diseño 
+  Estructurado de Algoritmos.*/
 
-  int numVendedores, contador = 0, sueldo, cantidad = 3;
-  double comisiones, ventas, sueldoTotal;
+  // Definicion de variables
+  double Promedio, Nota, Suma;
 
-  print("Digite la cantidad de trbajadores contratados");
-  numVendedores = int.parse(stdin.readLineSync()!);
-  while (contador < numVendedores) {
-    print("Digite el sueldo base");
-    sueldo = int.parse(stdin.readLineSync()!);
-    for (int i = 0; i < cantidad; i++) {
-      print("Ingrese el valor de la venta numero " + (i + 1).toString());
-      ventas = double.parse(stdin.readLineSync()!);
-      sueldo += cantidad;
-    }
-    comisiones = sueldo * 0.10;
-    print("El total con comisiones es: $comisiones ");
-    sueldoTotal = sueldo + comisiones;
-    print("El sueldo total es de $sueldoTotal");
-    contador++;
+  // Proceso Algoritmo
+  Suma = 0.0;
+  for (int i = 0; i < 7; i++) {
+    print("Digite la nota " + (i + 1).toString() + ":");
+    Nota = double.parse(stdin.readLineSync()!);
+    Suma += Nota;
   }
+  Promedio = Suma / 7;
+
+  // Salida Algoritmo
+  print("El promedio fue: $Promedio");
 }
+
