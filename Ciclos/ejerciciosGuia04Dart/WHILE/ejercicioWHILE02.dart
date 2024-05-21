@@ -1,35 +1,38 @@
 import 'dart:io';
 
 void main() {
-  // Solicitar el número de obreros
-  stdout.write("Ingrese el número de obreros: ");
-  var numObreros = int.parse(stdin.readLineSync()!);
+  // Definición de variables
+  int cantObreros, contador = 0;
 
-  // Inicializar la variable para contar los obreros
-  var contadorObreros = 1;
+  // Entrada de datos
+  print("Ingrese la cantidad de obreros:");
+  cantObreros = int.parse(stdin.readLineSync()!);
 
-  // Calcular el salario de cada obrero
-  while (contadorObreros <= numObreros) {
-    stdout.write("\nHoras trabajadas por el obrero $contadorObreros: ");
+  // Proceso y salida de datos
+  while (contador < cantObreros) {
+    int horasTrabajadas, horasExtras = 0;
+    double salario;
+    double valorHora = 20.0;
+    double valorHoraExtra = 25.0;
 
-    // Leer las horas trabajadas por el obrero
-    var horasTrabajadas = int.parse(stdin.readLineSync()!);
+    // Entrada de horas trabajadas
+    print("\nObrero ${contador + 1}:");
+    print("Ingrese la cantidad de horas trabajadas:");
+    horasTrabajadas = int.parse(stdin.readLineSync()!);
 
-    // Calcular el salario para el obrero
-    var salario;
-
-    if (horasTrabajadas <= 40) {
-      salario = horasTrabajadas * 20;
+    // Proceso de cálculo del salario
+    if (horasTrabajadas > 40) {
+      horasExtras = horasTrabajadas - 40;
+      salario = (40 * valorHora) + (horasExtras * valorHoraExtra);
     } else {
-      var horasNormales = 40;
-      var horasExtras = horasTrabajadas - 40;
-      salario = (horasNormales * 20) + (horasExtras * 25);
+      salario = horasTrabajadas * valorHora;
     }
 
-    // Mostrar el salario del obrero
-    print("El salario del obrero $contadorObreros es: \$$salario");
+    // Salida
+    print("Horas trabajadas: $horasTrabajadas");
+    print("Horas extras trabajadas: $horasExtras");
+    print("Salario semanal: \$${salario.toStringAsFixed(2)}");
 
-    // Incrementar el contador de obreros
-    contadorObreros++;
+    contador++;
   }
 }

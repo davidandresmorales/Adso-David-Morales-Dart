@@ -1,34 +1,22 @@
 import 'dart:io';
 
-void main() {
-  // Solicitar el número de vendedores
-  stdout.write("Ingrese el número de vendedores: ");
-  var numVendedores = int.parse(stdin.readLineSync()!);
+void main(List<String> args) {
+  // David Andres Morales - FOR 01
+  /* Calcular el promedio de un alumno que tiene 7 calificaciones en la materia de Diseño 
+  Estructurado de Algoritmos.*/
 
-  // Solicitar el sueldo base de los vendedores
-  stdout.write("Ingrese el sueldo base de los vendedores: ");
-  var sueldoBase = double.parse(stdin.readLineSync()!);
+  // Definicion de variables
+  double Promedio, Nota, Suma;
 
-  // Inicializar la variable para contar los vendedores
-  var contadorVendedores = 1;
-
-  // Calcular el salario de cada vendedor
-  while (contadorVendedores <= numVendedores) {
-    stdout.write("\nVentas del vendedor $contadorVendedores: ");
-
-    // Leer las ventas del vendedor
-    var ventas = double.parse(stdin.readLineSync()!);
-
-    // Calcular el 10% de las comisiones
-    var comisiones = ventas * 0.1;
-
-    // Calcular el salario total
-    var salarioTotal = sueldoBase + comisiones;
-
-    // Mostrar el salario total del vendedor
-    print("El salario total del vendedor $contadorVendedores es: \$$salarioTotal");
-
-    // Incrementar el contador de vendedores
-    contadorVendedores++;
+  // Proceso Algoritmo
+  Suma = 0.0;
+  for (int i = 0; i < 7; i++) {
+    print("Digite la nota " + (i + 1).toString() + ":");
+    Nota = double.parse(stdin.readLineSync()!);
+    Suma += Nota;
   }
+  Promedio = Suma / 7;
+
+  // Salida Algoritmo
+  print("El promedio fue: $Promedio");
 }

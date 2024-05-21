@@ -1,45 +1,27 @@
 import 'dart:io';
 
-void main() {
-  // Solicitar el número total de personas en el grupo
-  stdout.write("Ingrese el número total de personas en el grupo: ");
-  var totalPersonas = int.parse(stdin.readLineSync()!);
+void main(List<String> args) {
+  // Definir variables
+  String genero;
+  int contador = 0, numPersonas, contadorHombre = 0, contadorMujer = 0;
 
-  // Inicializar contadores para hombres y mujeres
-  var hombres = 0;
-  var mujeres = 0;
+  // Entrada
+  print("Digite el número de personas");
+  numPersonas = int.parse(stdin.readLineSync()!);
 
-  // Inicializar contador para el número de personas ingresadas
-  var contadorPersonas = 1;
-
-  // Crear una lista para almacenar el género de cada persona
-  var generos = [];
-
-  // Leer el género de cada persona y almacenarlo en la lista
-  while (contadorPersonas <= totalPersonas) {
-    stdout.write("Género de la persona $contadorPersonas (H para hombre, M para mujer): ");
-    var genero = stdin.readLineSync()!.toUpperCase();
-
-    // Verificar si el género ingresado es válido
-    if (genero == 'H' || genero == 'M') {
-      generos.add(genero);
-      contadorPersonas++;
-    } else {
-      print("Género no válido. Por favor, ingrese H para hombre o M para mujer.");
+  // Proceso
+  while (contador < numPersonas) {
+    for (int i = 0; i < numPersonas; i++) {
+      print("Digite el género de la persona");
+      genero = stdin.readLineSync()!.toUpperCase();
+      if (genero == "M") {
+        contadorHombre++;
+      } else if (genero == "F") {
+        contadorMujer++;
+      }
+      contador++;
     }
+    print("Hay $contadorHombre hombres");
+    print("Hay $contadorMujer mujeres");
   }
-
-  // Contar el número de hombres y mujeres en la lista de géneros
-  for (var genero in generos) {
-    if (genero == 'H') {
-      hombres++;
-    } else {
-      mujeres++;
-    }
-  }
-
-  // Mostrar el resultado
-  print("\nEn el grupo de $totalPersonas personas:");
-  print("Hombres: $hombres");
-  print("Mujeres: $mujeres");
 }
