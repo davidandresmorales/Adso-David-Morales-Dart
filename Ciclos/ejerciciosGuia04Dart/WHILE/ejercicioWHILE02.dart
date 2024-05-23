@@ -1,70 +1,37 @@
 import 'dart:io';
 
 void main() {
-<<<<<<< HEAD
-// David Andres Morales - EJE WHILE 02
-  /*En una empresa se requiere calcular el salario semanal de cada uno de los n obreros que laboran en ella. El salario se obtiene de la sig. forma:
-Si el obrero trabaja 40 horas o menos se le paga $20 por hora
-Si trabaja más de 40 horas se le paga $20 por cada una de las primeras 40 horas y $25 por cada hora extra.
+  /*
+  En una compañía se requiere calcular el salario semanal de cada uno de los n trabajadores que laboran en ella. El salario se obtiene de la siguiente manera:
+  Si el trabajador labora 40 horas o menos, se le paga $20 por hora.
+  Si trabaja más de 40 horas, se le paga $20 por cada una de las primeras 40 horas y $25 por cada hora extra.
   */
 
-  //Definicion variables
-  int horasTrabajadas = 0, horasExtras = 0, cantObreros, contador = 0;
-  double salario, valorHora = 20, valorHoraExtras = 25;
-
-//Entrada Algoritmo
-  print("Escriba la cantidad de obreros");
-  cantObreros = int.parse(stdin.readLineSync()!);
-
-//Proceso Algoritmo
-  while (contador < cantObreros) {
-    print("Escriba la cantidad de horas que trabajo");
-    horasTrabajadas = int.parse(stdin.readLineSync()!);
-    contador++;
-
-    if (horasTrabajadas > 40) {
-      horasExtras = horasTrabajadas - 40;
-      salario = (40 * valorHora) + (horasExtras * valorHoraExtras);
-    } else {
-      salario = horasTrabajadas * valorHora;
-    }
-    //Salida Algoritmo
-    print("Las horas trabajadas son: $horasTrabajadas");
-    print("las horas extras trabajadas son: $horasExtras");
-    print("el salario es: $salario");
-=======
   // Definición de variables
-  int cantObreros, contador = 0;
+  int horasTotales = 0, horasAdicionales = 0, numeroTrabajadores, contadorTrabajadores = 0;
+  double salarioSemanal, tarifaHoraNormal = 20, tarifaHoraExtra = 25;
 
-  // Entrada de datos
-  print("Ingrese la cantidad de obreros:");
-  cantObreros = int.parse(stdin.readLineSync()!);
+  // Entrada del algoritmo
+  print("Ingrese la cantidad de trabajadores:");
+  numeroTrabajadores = int.parse(stdin.readLineSync()!);
 
-  // Proceso y salida de datos
-  while (contador < cantObreros) {
-    int horasTrabajadas, horasExtras = 0;
-    double salario;
-    double valorHora = 20.0;
-    double valorHoraExtra = 25.0;
+  // Proceso del algoritmo
+  while (contadorTrabajadores < numeroTrabajadores) {
+    print("Ingrese la cantidad de horas que trabajó:");
+    horasTotales = int.parse(stdin.readLineSync()!);
+    contadorTrabajadores++;
 
-    // Entrada de horas trabajadas
-    print("\nObrero ${contador + 1}:");
-    print("Ingrese la cantidad de horas trabajadas:");
-    horasTrabajadas = int.parse(stdin.readLineSync()!);
-
-    // Proceso de cálculo del salario
-    if (horasTrabajadas > 40) {
-      horasExtras = horasTrabajadas - 40;
-      salario = (40 * valorHora) + (horasExtras * valorHoraExtra);
+    if (horasTotales > 40) {
+      horasAdicionales = horasTotales - 40;
+      salarioSemanal = (40 * tarifaHoraNormal) + (horasAdicionales * tarifaHoraExtra);
     } else {
-      salario = horasTrabajadas * valorHora;
+      horasAdicionales = 0; 
+      salarioSemanal = horasTotales * tarifaHoraNormal;
     }
 
-    // Salida
-    print("Horas trabajadas: $horasTrabajadas");
-    print("Horas extras trabajadas: $horasExtras");
-    print("Salario semanal: \$${salario.toStringAsFixed(2)}");
-
-    contador++;
+    // Salida del algoritmo
+    print("Horas trabajadas: $horasTotales");
+    print("Horas extras trabajadas: $horasAdicionales");
+    print("El salario semanal es: \$${salarioSemanal.toStringAsFixed(2)}");
   }
 }

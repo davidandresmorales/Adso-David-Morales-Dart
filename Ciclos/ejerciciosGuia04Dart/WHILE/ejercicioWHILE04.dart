@@ -1,56 +1,54 @@
 import 'dart:io';
 
-void main() {
-  // Solicitar el número total de autos que entran a la Ciudad de México
-  stdout.write("Ingrese el número total de autos que entran a la Ciudad de México: ");
-  var totalAutos = int.parse(stdin.readLineSync()!);
+void main(List<String> args) {
+  /*
+  El Departamento de Seguridad Pública y Tránsito del D.F. desea saber, de los n autos que entran a la Ciudad de México, cuántos entran con calcomanía de cada color. Conociendo el último dígito de la placa de cada automóvil se puede determinar el color de la calcomanía utilizando la siguiente relación:
 
-  // Inicializar contadores para cada color de calcomanía
-  var amarilla = 0;
-  var rosada = 0;
-  var roja = 0;
-  var verde = 0;
-  var azul = 0;
+  +--------+-----------+
+  | Dígito |   Color   |
+  +--------+-----------+
+  |  1, 2  | Amarilla  |
+  |  3, 4  | Rosada    |
+  |  5, 6  | Roja      |
+  |  7, 8  | Verde     |
+  |  9, 0  | Azul      |
+  +--------+-----------+
+  */
 
-  // Inicializar contador para el número de autos ingresados
-  var contadorAutos = 1;
-
-  // Determinar el color de calcomanía de cada auto
-  while (contadorAutos <= totalAutos) {
-    // Solicitar el color de la calcomanía de cada auto
-    stdout.write("Color de la calcomanía del auto $contadorAutos (amarilla, rosada, roja, verde, azul): ");
-    var color = stdin.readLineSync()!.toLowerCase();
-
-    // Incrementar el contador correspondiente según el color ingresado
-    switch (color) {
-      case 'amarilla':
-        amarilla++;
-        break;
-      case 'rosada':
-        rosada++;
-        break;
-      case 'roja':
-        roja++;
-        break;
-      case 'verde':
-        verde++;
-        break;
-      case 'azul':
-        azul++;
-        break;
-      default:
-        print("Color de calcomanía no válido. Por favor, ingrese un color válido.");
-        continue;
+  // Definición de variables
+  int numeroAutos, contadorAmarilla = 0, contadorRosada = 0, contadorRoja = 0, contadorVerde = 0, contadorAzul = 0, contadorAutos = 0, ultimoDigitoPlaca;
+  
+  // Entrada del algoritmo
+  print("Ingrese el número de autos:");
+  numeroAutos = int.parse(stdin.readLineSync()!);
+  
+  // Proceso del algoritmo
+  while (contadorAutos < numeroAutos) {
+    print("Ingrese el último dígito de la placa del auto número ${contadorAutos + 1}:");
+    ultimoDigitoPlaca = int.parse(stdin.readLineSync()!);
+    
+    if (ultimoDigitoPlaca == 1 || ultimoDigitoPlaca == 2) {
+      contadorAmarilla++;
+    } else if (ultimoDigitoPlaca == 3 || ultimoDigitoPlaca == 4) {
+      contadorRosada++;
+    } else if (ultimoDigitoPlaca == 5 || ultimoDigitoPlaca == 6) {
+      contadorRoja++;
+    } else if (ultimoDigitoPlaca == 7 || ultimoDigitoPlaca == 8) {
+      contadorVerde++;
+    } else if (ultimoDigitoPlaca == 9 || ultimoDigitoPlaca == 0) {
+      contadorAzul++;
+    } else {
+      print("Dígito no válido, por favor ingrese un número del 0 al 9.");
+      continue;
     }
-
-    contadorAutos++;
+    
+    contadorAutos++;  
   }
-
-  // Mostrar el resultado
-  print("\nDe los $totalAutos autos que entran a la Ciudad de México:");
-  print("Calcomanías amarillas: $amarilla");
-  print("Calcomanías rosadas: $rosada");
-  print("Calcomanías rojas: $roja");
-  print("Calcomanías verdes: $verde");
-  print("Calcomanías azules: $azul");
+  
+  // Salida del algoritmo
+  print("La cantidad de autos con calcomanía amarilla es: $contadorAmarilla");
+  print("La cantidad de autos con calcomanía rosada es: $contadorRosada");
+  print("La cantidad de autos con calcomanía roja es: $contadorRoja");
+  print("La cantidad de autos con calcomanía verde es: $contadorVerde");
+  print("La cantidad de autos con calcomanía azul es: $contadorAzul");
 }
