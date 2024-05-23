@@ -1,56 +1,49 @@
 import 'dart:io';
 
-void main() {
-  // Solicitar el número total de alumnos
-  stdout.write("Ingrese el número total de alumnos: ");
-  var totalAlumnos = int.parse(stdin.readLineSync()!);
+void main(List<String> args) {
+  /*
+  Calcular el promedio de edades de hombres, mujeres y de todo un grupo de n alumnos.
+  */
 
-  // Inicializar contadores para hombres, mujeres y el grupo en general
-  var hombres = 0;
-  var mujeres = 0;
-  var sumaEdadesHombres = 0;
-  var sumaEdadesMujeres = 0;
-  var sumaEdadesTotal = 0;
+  // Definición de variables
+  int numeroAlumnos, contadorAlumnos = 0, cantidadHombres = 0, cantidadMujeres = 0, sumaEdadesHombres = 0, sumaEdadesMujeres = 0, edad;
+  double promedioTotal = 0, sumaTotalEdades = 0, promedioHombres = 0, promedioMujeres = 0;
+  String genero;
 
-  // Inicializar el contador de alumnos
-  var contadorAlumnos = 0;
+  // Entrada del algoritmo
+  print("Ingrese el número de alumnos:");
+  numeroAlumnos = int.parse(stdin.readLineSync()!);
 
-  // Calcular el promedio de edades de hombres, mujeres y del grupo
-  while (contadorAlumnos < totalAlumnos) {
-    stdout.write("Ingrese el género del alumno ${contadorAlumnos + 1} (H para hombre, M para mujer): ");
-    var genero = stdin.readLineSync()!.toUpperCase();
+  // Proceso del algoritmo
+  while (contadorAlumnos < numeroAlumnos) {
+    print("Ingrese la edad del alumno ${contadorAlumnos + 1}:");
+    edad = int.parse(stdin.readLineSync()!);
+    
+    print("Ingrese el género del alumno ${contadorAlumnos + 1} (M/F):");
+    genero = stdin.readLineSync()!;
 
-    // Solicitar la edad del alumno
-    stdout.write("Ingrese la edad del alumno ${contadorAlumnos + 1}: ");
-    var edad = int.parse(stdin.readLineSync()!);
-
-    // Verificar el género del alumno y sumar la edad correspondiente
-    if (genero == 'H') {
-      hombres++;
+    if (genero == "M") {
       sumaEdadesHombres += edad;
-    } else if (genero == 'M') {
-      mujeres++;
+      cantidadHombres++;
+    } else if (genero == "F") {
       sumaEdadesMujeres += edad;
-    } else {
-      print("Género no válido. Por favor, ingrese H para hombre o M para mujer.");
-      continue; // Saltar al siguiente ciclo si el género no es válido
+      cantidadMujeres++;
     }
-
-    // Sumar la edad al grupo en general
-    sumaEdadesTotal += edad;
-
-    // Incrementar el contador de alumnos
+    
+    sumaTotalEdades += edad;
     contadorAlumnos++;
   }
 
-  // Calcular el promedio de edades de hombres, mujeres y del grupo
-  var promedioEdadHombres = hombres > 0 ? sumaEdadesHombres / hombres : 0;
-  var promedioEdadMujeres = mujeres > 0 ? sumaEdadesMujeres / mujeres : 0;
-  var promedioEdadTotal = totalAlumnos > 0 ? sumaEdadesTotal / totalAlumnos : 0;
+  promedioTotal = sumaTotalEdades / numeroAlumnos;
+  if (cantidadHombres > 0) {
+    promedioHombres = sumaEdadesHombres / cantidadHombres;
+  }
+  if (cantidadMujeres > 0) {
+    promedioMujeres = sumaEdadesMujeres / cantidadMujeres;
+  }
 
-  // Mostrar el resultado
-  print("\nPromedio de edades:");
-  print("Hombres: $promedioEdadHombres");
-  print("Mujeres: $promedioEdadMujeres");
-  print("Grupo total: $promedioEdadTotal");
+  // Salida del algoritmo
+  print("El promedio de edades del grupo es: $promedioTotal");
+  print("El promedio de edades de los hombres es: $promedioHombres");
+  print("El promedio de edades de las mujeres es: $promedioMujeres");
 }

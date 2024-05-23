@@ -1,18 +1,20 @@
 import 'dart:io';
 
-void main() {
-  print("Por favor, ingrese 10 números:");
-  
-  List<int> numeros = [];
-  for (var i = 0; i < 10; i++) {
-    stdout.write("Número ${i + 1}: ");
-    var numero = int.parse(stdin.readLineSync()!);
-    numeros.add(numero);
-  }
+void main(List<String> args) {
+  // David Andres Morales - FOR 02
 
-  print("Los números positivos son:");
-  for (var numero in numeros) {
-    if (numero > 0) {
+  /*
+  Leer 10 números e imprimir solamente los números positivos
+  */
+
+  // DECLARACION DE VARIABLES
+  int numero;
+
+  // Proceso y salida del Algoritmo
+  for (int i = 0; i < 10; i++) {
+    print("Ingresa los números:");
+    numero = int.parse(stdin.readLineSync()!);
+    if (numero >= 0) {
       print(numero);
     }
   }

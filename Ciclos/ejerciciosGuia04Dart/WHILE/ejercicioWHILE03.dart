@@ -1,53 +1,35 @@
 import 'dart:io';
 
 void main(List<String> args) {
-<<<<<<< HEAD
-// David Andres Morales - EJE WHILE 03
   /*
-
+  Determinar  cuantos  hombres  y  cuantas  mujeres  se  encuentran  en  un  grupo  de  n  personas, 
+  suponiendo que los datos son extraídos alumno por alumno.
   */
 
-  //Definir variables
+  // Definición de variables
   String genero;
-  int contador = 0, numPersonas, contadorHombre = 0, contadorMujer = 0;
-
-  //Entrada
-  print("Ingrese el numero de personas");
-  numPersonas = int.parse(stdin.readLineSync()!);
-  while (contador < numPersonas) {
-    for (int i = 0; i < numPersonas; i++) {
-      print("Ingrese el genero de la persona");
-      genero = stdin.readLineSync()!;
-      if (genero == "H") {
-        contadorHombre++;
-      } else if (genero == "M") {
-=======
-  // Definir variables
-  String genero;
-  int contador = 0, numPersonas, contadorHombre = 0, contadorMujer = 0;
-
-  // Entrada
-  print("Digite el número de personas");
-  numPersonas = int.parse(stdin.readLineSync()!);
-
-  // Proceso
-  while (contador < numPersonas) {
-    for (int i = 0; i < numPersonas; i++) {
-      print("Digite el género de la persona");
-      genero = stdin.readLineSync()!.toUpperCase();
-      if (genero == "M") {
-        contadorHombre++;
-      } else if (genero == "F") {
->>>>>>> 5397a564372fcc42b1052ed742b2857bbd44296f
-        contadorMujer++;
-      }
-      contador++;
+  int contadorPersonas = 0, numeroPersonas, cantidadHombres = 0, cantidadMujeres = 0;
+  
+  // Entrada del algoritmo
+  print("Ingrese el número de personas:");
+  numeroPersonas = int.parse(stdin.readLineSync()!);
+  
+  // Proceso del algoritmo
+  while (contadorPersonas < numeroPersonas) {
+    print("Ingrese el género de la persona (M/F):");
+    genero = stdin.readLineSync()!;
+    if (genero == "M") {
+      cantidadHombres++;
+    } else if (genero == "F") {
+      cantidadMujeres++;
+    } else {
+      print("Género no válido, por favor ingrese 'M' o 'F'.");
+      continue; 
     }
-    print("Hay $contadorHombre hombres");
-    print("Hay $contadorMujer mujeres");
+    contadorPersonas++;
   }
-<<<<<<< HEAD
+
+  // Salida del algoritmo
+  print("Hay $cantidadHombres hombres.");
+  print("Hay $cantidadMujeres mujeres.");
 }
-=======
-}
->>>>>>> 5397a564372fcc42b1052ed742b2857bbd44296f

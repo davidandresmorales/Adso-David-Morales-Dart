@@ -1,30 +1,31 @@
 import 'dart:io';
 
-void main() {
-  // Solicitar el número total de números
-  stdout.write("Ingrese el número total de números: ");
-  var totalNumeros = int.parse(stdin.readLineSync()!);
+void main(List<String> args) {
+  /*
+  Encontrar el menor valor de un conjunto de n números dados.
+  */
 
-  // Inicializar el mayor valor con un valor muy pequeño para comparación inicial
-  var mayorValor = -double.infinity;
+  // Definición de variables
+  int cantidadNumeros, menorValor, contadorNumeros = 0, numeroActual;
 
-  // Inicializar el contador de números ingresados
-  var contadorNumeros = 0;
+  // Entrada del algoritmo
+  print("Ingrese la cantidad de números:");
+  cantidadNumeros = int.parse(stdin.readLineSync()!);
 
-  // Encontrar el mayor valor entre los números dados
-  while (contadorNumeros < totalNumeros) {
-    stdout.write("Ingrese el número ${contadorNumeros + 1}: ");
-    var numero = double.parse(stdin.readLineSync()!);
+  menorValor = 1500;
 
-    // Verificar si el número ingresado es mayor que el mayor valor actual
-    if (numero > mayorValor) {
-      mayorValor = numero;
+  // Proceso del algoritmo
+  while (contadorNumeros < cantidadNumeros) {
+    print("Ingrese el número ${contadorNumeros + 1}:");
+    numeroActual = int.parse(stdin.readLineSync()!);
+
+    if (numeroActual < menorValor) {
+      menorValor = numeroActual;
     }
 
-    // Incrementar el contador de números ingresados
     contadorNumeros++;
   }
 
-  // Mostrar el resultado
-  print("\nEl mayor valor entre los $totalNumeros números ingresados es: $mayorValor");
+  // Salida del algoritmo
+  print("El número menor es: $menorValor");
 }

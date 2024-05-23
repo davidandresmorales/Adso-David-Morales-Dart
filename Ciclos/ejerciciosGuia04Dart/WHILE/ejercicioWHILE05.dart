@@ -1,27 +1,28 @@
 import 'dart:io';
 
-void main() {
-  // Solicitar el número total de alumnos
-  stdout.write("Ingrese el número total de alumnos: ");
-  var totalAlumnos = int.parse(stdin.readLineSync()!);
+void main(List<String> args) {
+  /*
+  Obtener el promedio de calificaciones de un grupo de n alumnos.
+  */
 
-  var sumaCalificaciones = 0.0;
-  var contadorAlumnos = 0;
+  // Definición de variables
+  int numeroAlumnos, contadorAlumnos = 0;
+  double promedio = 0, sumaCalificaciones = 0, calificacion;
 
-  while (contadorAlumnos < totalAlumnos) {
-    stdout.write("Ingrese la calificación del alumno ${contadorAlumnos + 1}: ");
-    var calificacion = double.parse(stdin.readLineSync()!);
-    
-    if (calificacion >= 0 && calificacion <= 10) {
-      sumaCalificaciones += calificacion;
-      contadorAlumnos++;
-    } else {
-      print("La calificación ingresada no es válida. Por favor, ingrese una calificación entre 0 y 10.");
-    }
+  // Entrada del algoritmo
+  print("Ingrese el número de alumnos:");
+  numeroAlumnos = int.parse(stdin.readLineSync()!);
+
+  // Proceso del algoritmo
+  while (contadorAlumnos < numeroAlumnos) {
+    print("Ingrese la calificación del alumno ${contadorAlumnos + 1}:");
+    calificacion = double.parse(stdin.readLineSync()!);
+    sumaCalificaciones += calificacion;
+    contadorAlumnos++;
   }
+  
+  promedio = sumaCalificaciones / numeroAlumnos;
 
-  var promedio = sumaCalificaciones / totalAlumnos;
-
-  // Mostrar el resultado
-  print("\nEl promedio de calificaciones del grupo de $totalAlumnos alumnos es: $promedio");
+  // Salida del algoritmo
+  print("El promedio de calificaciones es: $promedio");
 }

@@ -7,9 +7,9 @@ void main() {
 
   print("Por favor, ingrese 20 números:");
   
-  for (var i = 0; i < 20; i++) {
+  for (int i = 0; i < 20; i++) {
     stdout.write("Número ${i + 1}: ");
-    var numero = int.parse(stdin.readLineSync()!);
+    int numero = int.parse(stdin.readLineSync()!);
     
     if (numero > 0) {
       positivos++;

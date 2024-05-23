@@ -12,12 +12,12 @@ void main() {
 
   print("Por favor, ingrese la edad y el peso de cada persona:");
 
-  for (var i = 0; i < 50; i++) {
+  for (int i = 0; i < 50; i++) {
     stdout.write("Edad de la persona ${i + 1}: ");
-    var edad = int.parse(stdin.readLineSync()!);
+    int edad = int.parse(stdin.readLineSync()!);
     
     stdout.write("Peso de la persona ${i + 1}: ");
-    var peso = double.parse(stdin.readLineSync()!);
+    double peso = double.parse(stdin.readLineSync()!);
 
     if (edad >= 0 && edad <= 12) {
       totalNinos++;
