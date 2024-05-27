@@ -1,6 +1,21 @@
 import 'dart:io';
 
 void main() {
+  /*
+    Una persona debe realizar un muestreo con 50 personas para determinar el promedio de peso
+    de los niños, jóvenes, adultos y adultos mayores que existen en su zona habitacional.
+    Se determinan las categorías con base en la siguiente tabla:
+    
+    CATEGORÍA       EDAD
+    Niños           0 – 12
+    Jóvenes         13 - 29
+    Adultos         30 - 59
+    Adultos Mayores 60 en adelante
+    
+    Se debe solicitar la edad y el peso de cada persona y calcular y mostrar el promedio por categoría.
+  */
+
+  // Definición de Variables para almacenar datos por categoría
   int totalNinos = 0;
   double sumaPesosNinos = 0;
   int totalJovenes = 0;
@@ -10,8 +25,10 @@ void main() {
   int totalAdultosMayores = 0;
   double sumaPesosAdultosMayores = 0;
 
+  // Entrada Algoritmo
   print("Por favor, ingrese la edad y el peso de cada persona:");
 
+  // Proceso Algoritmo
   for (int i = 0; i < 50; i++) {
     stdout.write("Edad de la persona ${i + 1}: ");
     int edad = int.parse(stdin.readLineSync()!);
@@ -39,6 +56,7 @@ void main() {
   double promedioPesoAdultos = totalAdultos > 0 ? sumaPesosAdultos / totalAdultos : 0;
   double promedioPesoAdultosMayores = totalAdultosMayores > 0 ? sumaPesosAdultosMayores / totalAdultosMayores : 0;
 
+  // Salida Algoritmo
   print("\nResultados:");
   print("Promedio de peso de niños: $promedioPesoNinos");
   print("Promedio de peso de jóvenes: $promedioPesoJovenes");

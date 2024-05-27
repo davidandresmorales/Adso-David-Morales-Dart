@@ -1,8 +1,11 @@
 import 'dart:io';
 
 void main(List<String> args) {
+  // David Andres Morales - EJER ciclos While 4
+
   /*
-  El Departamento de Seguridad Pública y Tránsito del D.F. desea saber, de los n autos que entran a la Ciudad de México, cuántos entran con calcomanía de cada color. Conociendo el último dígito de la placa de cada automóvil se puede determinar el color de la calcomanía utilizando la siguiente relación:
+  El Departamento de Seguridad Pública y Tránsito del D.F. desea saber, de los n autos que entran a la Ciudad de México, cuántos entran con calcomanía de cada color. 
+  Conociendo el último dígito de la placa de cada automóvil se puede determinar el color de la calcomanía utilizando la siguiente relación:
 
   +--------+-----------+
   | Dígito |   Color   |

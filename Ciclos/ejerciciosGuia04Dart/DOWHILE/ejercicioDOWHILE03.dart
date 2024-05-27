@@ -1,8 +1,12 @@
 import 'dart:io';
 
 void main(List<String> args) {
+  // David Andres Morales Ejercicio - Do While - 3
   /*
-  En la Cámara de Diputados se levanta una encuesta con todos los integrantes con el fin de determinar qué porcentaje de los diputados está a favor del Tratado de Libre Comercio, qué porcentaje está en contra y qué porcentaje se abstiene de opinar. El programa debe preguntar si se desea continuar ingresando datos.
+  En la Cámara de Diputados se levanta una encuesta con todos los integrantes 
+  con el fin de determinar qué porcentaje de los diputados está a favor 
+  del Tratado de Libre Comercio, qué porcentaje está en contra y qué porcentaje 
+  se abstiene de opinar. El programa debe preguntar si se desea continuar ingresando datos.
   */
 
   // Definición de variables

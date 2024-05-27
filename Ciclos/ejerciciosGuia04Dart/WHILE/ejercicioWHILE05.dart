@@ -1,6 +1,8 @@
 import 'dart:io';
 
 void main(List<String> args) {
+  // David Andres Morales - EJER ciclos While 5
+
   /*
   Obtener el promedio de calificaciones de un grupo de n alumnos.
   */

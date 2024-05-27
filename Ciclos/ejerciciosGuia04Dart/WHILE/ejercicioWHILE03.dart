@@ -1,11 +1,11 @@
 import 'dart:io';
 
 void main(List<String> args) {
+  // David Andres Morales - EJER ciclos While 3
   /*
   Determinar  cuantos  hombres  y  cuantas  mujeres  se  encuentran  en  un  grupo  de  n  personas, 
   suponiendo que los datos son extraídos alumno por alumno.
   */
-
   // Definición de variables
   String genero;
   int contadorPersonas = 0, numeroPersonas, cantidadHombres = 0, cantidadMujeres = 0;

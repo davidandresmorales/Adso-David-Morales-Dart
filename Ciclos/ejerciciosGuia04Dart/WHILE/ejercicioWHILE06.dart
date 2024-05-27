@@ -1,6 +1,8 @@
 import 'dart:io';
 
 void main(List<String> args) {
+  // David Andres Morales - EJER ciclos While 6
+
   /*
   Calcular el promedio de edades de hombres, mujeres y de todo un grupo de n alumnos.
   */
