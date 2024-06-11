@@ -1,5 +1,6 @@
 import 'dart:io';
-
+//David Andres Morales - ejercicio Matriz 1
+//1.Hacer un algoritmo que almacene números en una matriz de 5 * 6. Imprimir la suma de los números almacenados en la matriz.
 void main(List<String> args) {
   List<List<double>> matriz = [];
   double suma = 0;
