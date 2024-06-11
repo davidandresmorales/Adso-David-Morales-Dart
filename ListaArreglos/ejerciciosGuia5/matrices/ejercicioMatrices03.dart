@@ -27,7 +27,7 @@ void main(List<String> args) {
   for (int i = 0; i < totalTurnos.length; i++) {
     if (totalArticulos[i] > mayorProd) {
       mayorProd = totalArticulos[i];
-      posicionMayor
+      posicionMayor:
       
     }
     
